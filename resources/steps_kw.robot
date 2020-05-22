@@ -3,6 +3,7 @@ Resource        base.robot
 
 *** Keywords ***
 
+## login
 I access login page
     Go To                           https://bikelov.herokuapp.com/
 
@@ -15,3 +16,20 @@ The logged area should be displayed
 
 I should view the alert message "${expected_message}"
     Element Text Should Be          class:alert-dark                            ${expected_message}
+
+## Ads
+
+I have a bike ${bike_string}
+    ${bike_json}=       evaluate        json.loads($bike_string)        json
+    log                 ${bike_json}
+    Set Test Variable   ${bike_json}
+
+I create the bike ad
+    Click Link          /new
+    Choose File         css:#thumbnail input                            ${CURDIR}/images/${bike_json['thumb']}
+    Input Text          id:name                                         ${bike_json['name']}
+    Input Text          id:brand                                        ${bike_json['brand']}
+    Input Text          css:input[placeholder*='cobrado por dia']       ${bike_json['price']}
+    Click Element       class:btn-red
+
+I view my bike in ads list

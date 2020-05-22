@@ -14,5 +14,12 @@ Start Session
 End Session
     Close Browser
 
+Logged with "${email}"
+    Start Session
+    Go To                           ${BASE_URL}
+    Input Text                      id:email                                    ${email}
+    Click Element                   xpath://button[contains(text(),'Entrar')]   
+    Page Should Contain Element     class:dashboard
+
 End Test
     Capture Page Screenshot
