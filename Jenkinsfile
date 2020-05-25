@@ -16,7 +16,7 @@ pipeline {
           steps{
               echo 'Executing regression tests!'
               sh 'robot -d ./log -e todo tests/'
-              robot otherFiles: '**.*.png', outputPath: 'log'
+              robot otherFiles: '**/*.png', outputPath: 'log'
           }
       }
       stage('UAT'){
