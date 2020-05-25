@@ -9,7 +9,7 @@ pipeline {
       stage('Build') {
          steps {
             echo 'Compiling or resolving project dependencies!'
-            sh 'pip install -r requirements'
+            sh 'pip install -r requirements.txt'
          }
       }
       stage('Tests'){
