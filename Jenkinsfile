@@ -16,7 +16,11 @@ pipeline {
           steps{
               echo 'Executing regression tests!'
               sh 'robot -d ./log -e todo tests/'
-              robot otherFiles: '**/*.png', outputPath: 'log'
+          }
+          post{
+              always{
+                  robot otherFiles: '**/*.png', outputPath: 'log'
+              }
           }
       }
       stage('UAT'){
