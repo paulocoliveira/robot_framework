@@ -16,6 +16,7 @@ pipeline {
           steps{
               echo 'Executing regression tests!'
               sh 'robot -d ./log -e todo tests/'
+              robot 'log'
           }
       }
       stage('UAT'){
