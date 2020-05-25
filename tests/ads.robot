@@ -17,5 +17,5 @@ Verify that it is possible to ad a bike
     Given I have a bike ${bike}
     When I create the bike ad
     Then I view my bike in ads list
+    And I verify rent cost is "R$15/dia"
 
-*** Keywords ***

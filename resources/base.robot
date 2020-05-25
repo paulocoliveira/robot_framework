@@ -8,8 +8,9 @@ ${BASE_URL}     https://bikelov.herokuapp.com/
 *** Keywords ***
 
 Start Session
-    Open Browser                    about:blank              chrome
+    Open Browser                    about:blank                 chrome
     Set Selenium Implicit Wait      5
+    Set Window Size                 1440                        900
 
 End Session
     Close Browser
