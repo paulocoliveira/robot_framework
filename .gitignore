@@ -1,2 +1,4 @@
 *.png
 output.xml
+logs/
+__pycache__/
