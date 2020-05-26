@@ -33,4 +33,4 @@ Try to log in
     [Arguments]     ${email}        ${expected_message}
     I access login page
     I submit my credentials with "${email}"
-    I should view the alert message "${expected_message}"
+    I should view the alert message "${expected_message}" in login screen
